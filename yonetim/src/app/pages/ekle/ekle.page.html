@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ÜYE EKLE</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="uye"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button (click)="uye()">
+        <ion-icon name="person-circle-outline" color="success"></ion-icon>
+        <ion-label>Üyeler</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="kategori()">
+        <ion-icon color="primary" name="git-compare-outline"></ion-icon>
+        <ion-label>Kategoriler</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="OturumKapat()">
+        <ion-icon color="danger" name="exit-outline"></ion-icon>
+        <ion-label>Oturumu Kapat</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  <form [formGroup]="frm" (ngSubmit)="UyeEkle()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Adı Soyadı</ion-label>
+        <ion-input
+          required
+          type="text"
+          formControlName="adsoyad"
+          #adsoyad
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input
+          type="email"
+          required
+          formControlName="mail"
+          #mail
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Parola</ion-label>
+        <ion-input
+          type="password"
+          required
+          formControlName="parola"
+          #parola
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select required placeholder="Admin mi?" formControlName="admin">
+          <ion-select-option value="1">Evet</ion-select-option>
+          <ion-select-option value="0">Hayır</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-input type="hidden" formControlName="id" #id></ion-input>
+        <ion-input
+          type="hidden"
+          formControlName="kaytarih"
+          #kaytarih
+        ></ion-input>
+        <ion-input
+          type="hidden"
+          formControlName="duztarih"
+          #duztarih
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button color="success" expand="block" type="Submit">Kaydet</ion-button>
+
+    <ion-button color="warning" expand="block" (click)="uye()"
+      >İptal</ion-button
+    >
+  </form>
+</ion-content>

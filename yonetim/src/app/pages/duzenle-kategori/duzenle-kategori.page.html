@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>duzenle-kategori</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content
+  ><form [formGroup]="frm" (ngSubmit)="KategoriDuzenle()">
+    <ion-list>
+      <ion-item>
+        <ion-label>Kategori Adı</ion-label>
+        <ion-input formControlName="adi"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="hidden" formControlName="id"></ion-input>
+        <ion-input type="hidden" formControlName="kaytarih"></ion-input>
+        <ion-input type="hidden" formControlName="duztarih"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button slot="bottom" expand="block" color="success" type="Submit"
+      >Kaydet</ion-button
+    >
+  </form>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "yonetim",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

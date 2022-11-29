@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>KATEGORİ EKLE</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="kategori"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button (click)="uye()">
+        <ion-icon name="person-circle-outline" color="success"></ion-icon>
+        <ion-label>Üyeler</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="kategori()">
+        <ion-icon color="primary" name="git-compare-outline"></ion-icon>
+        <ion-label>Kategoriler</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="OturumKapat()">
+        <ion-icon color="danger" name="exit-outline"></ion-icon>
+        <ion-label>Oturumu Kapat</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+  <form [formGroup]="frm" (ngSubmit)="KategoriEkle()">
+    <ion-list>
+      <ion-item>
+        <ion-label>Kategori Adı</ion-label>
+        <ion-input formControlName="adi" #adi></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="hidden" formControlName="id" #id></ion-input>
+        <ion-input
+          type="hidden"
+          formControlName="kaytarih"
+          #kaytarih
+        ></ion-input>
+        <ion-input
+          type="hidden"
+          formControlName="duztarih"
+          #duztarih
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button slot="bottom" expand="block" color="success" type="Submit"
+      >Kaydet</ion-button
+    >
+  </form>
+</ion-content>

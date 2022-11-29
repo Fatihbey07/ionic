@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Kısım</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="assets/1.png"></ion-img>
+  <ion-label>Lütfen Kısım Seçiniz.</ion-label>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button (click)="uye()">
+        <ion-icon name="person-circle-outline" color="success"></ion-icon>
+        <ion-label>Üyeler</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="kategori()">
+        <ion-icon color="primary" name="git-compare-outline"></ion-icon>
+        <ion-label>Kategoriler</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="OturumKapat()">
+        <ion-icon color="danger" name="exit-outline"></ion-icon>
+        <ion-label>Oturumu Kapat</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

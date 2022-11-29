@@ -1,0 +1,36 @@
+{
+  "categories": [
+    {
+      "id": 2,
+      "adi": "Fatih",
+      "kaytarih": "1669125286784",
+      "duztarih": "1669125286784"
+    },
+    {
+      "id": 4,
+      "adi": "Yeni",
+      "kaytarih": "1669395740890",
+      "duztarih": "1669395740890"
+    }
+  ],
+  "users": [
+    {
+      "id": 3,
+      "adsoyad": "Fatih İsmailoğlu",
+      "mail": "fatihas0747@gmail.com",
+      "admin": "1",
+      "parola": "199558",
+      "kaytarih": "1669396039564",
+      "duztarih": "1669640723908"
+    },
+    {
+      "id": 4,
+      "adsoyad": "Ali Bey",
+      "mail": "ali@mail.com",
+      "admin": "1",
+      "parola": "123",
+      "kaytarih": "1669672760643",
+      "duztarih": "1669672760643"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>duzenle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="frm" (ngSubmit)="duzenle()">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Ad Soyad</ion-label>
+        <ion-input
+          required
+          type="text"
+          formControlName="adsoyad"
+          #adsoyad
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">E-mail</ion-label>
+        <ion-input
+          type="email"
+          required
+          formControlName="mail"
+          #mail
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Parola</ion-label>
+        <ion-input
+          type="password"
+          required
+          formControlName="parola"
+          #parola
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-select required placeholder="Admin mi?" formControlName="admin">
+          <ion-select-option value="1">Evet</ion-select-option>
+          <ion-select-option value="0">Hayır</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-input type="hidden" formControlName="id" #id></ion-input>
+        <ion-input
+          type="hidden"
+          formControlName="kaytarih"
+          #kaytarih
+        ></ion-input>
+        <ion-input
+          type="hidden"
+          formControlName="duztarih"
+          #duztarih
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button color="success" expand="block" type="Submit">Kaydet</ion-button>
+
+    <ion-button color="warning" expand="block" (click)="uyegit()"
+      >İptal</ion-button
+    >
+  </form>
+</ion-content>

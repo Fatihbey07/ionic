@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Üye Listesi</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="secim"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button (click)="uye()">
+        <ion-icon name="person-circle-outline" color="success"></ion-icon>
+        <ion-label>Üyeler</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="kategori()">
+        <ion-icon color="primary" name="git-compare-outline"></ion-icon>
+        <ion-label>Kategoriler</ion-label>
+      </ion-tab-button>
+      <ion-tab-button (click)="OturumKapat()">
+        <ion-icon color="danger" name="exit-outline"></ion-icon>
+        <ion-label>Oturumu Kapat</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+
+  <ion-list>
+    <ion-item *ngFor="let uye of uyeler">
+      <ion-label>
+        <ion-label #adsoyad> {{uye.adsoyad}} <br /> </ion-label>
+
+        <ion-button [routerLink]="['/duzenle',uye.id]" color="warning">
+          Düzenle
+          <br />
+        </ion-button>
+        <ion-button color="danger" slot="end" (click)="uyeSil(uye)">
+          Sil
+        </ion-button>
+      </ion-label>
+    </ion-item>
+    <ion-button color="success" expand="block" (click)="uyeEkle()"
+      >Üye Ekle<ion-icon name="person-add-outline"></ion-icon
+    ></ion-button>
+  </ion-list>
+</ion-content>
