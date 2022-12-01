@@ -30,16 +30,29 @@
       <ion-label>
         <ion-label #adsoyad> {{uye.adsoyad}} <br /> </ion-label>
 
-        <ion-button [routerLink]="['/duzenle',uye.id]" color="warning">
+        <ion-button
+          *ngIf="servis.aktifUye.admin === 1"
+          [routerLink]="['/duzenle',uye.id]"
+          color="warning"
+        >
           Düzenle
           <br />
         </ion-button>
-        <ion-button color="danger" slot="end" (click)="uyeSil(uye)">
+        <ion-button
+          *ngIf="servis.aktifUye.admin === 1"
+          color="danger"
+          slot="end"
+          (click)="uyeSil(uye)"
+        >
           Sil
         </ion-button>
       </ion-label>
     </ion-item>
-    <ion-button color="success" expand="block" (click)="uyeEkle()"
+    <ion-button
+      *ngIf="servis.aktifUye.admin === 1"
+      color="success"
+      expand="block"
+      (click)="uyeEkle()"
       >Üye Ekle<ion-icon name="person-add-outline"></ion-icon
     ></ion-button>
   </ion-list>

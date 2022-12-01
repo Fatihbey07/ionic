@@ -38,19 +38,28 @@
           Düzenlenme Tarihi: {{kat.duztarih | date:'dd.MM.yyyy HH:mm:ss'}}
         </ion-label>
       </ion-label>
-      <ion-button [routerLink]="['/duzenle-kategori',kat.id]" color="warning">
+      <ion-button
+        *ngIf="servis.aktifUye.admin === 1"
+        [routerLink]="['/duzenle-kategori',kat.id]"
+        color="warning"
+      >
         Düzenle
         <br />
       </ion-button>
       <ion-button
-        [disabled]="servis.aktifUye.admin === 0"
+        *ngIf="servis.aktifUye.admin === 1"
         color="danger"
         (click)="KategoriSil(kat)"
       >
         Sil
       </ion-button>
     </ion-item>
-    <ion-button expand="block" color="primary" (click)="kategoriekle()">
+    <ion-button
+      *ngIf="servis.aktifUye.admin === 1"
+      expand="block"
+      color="primary"
+      (click)="kategoriekle()"
+    >
       Kategori Ekle<ion-icon name="git-network-outline"></ion-icon>
     </ion-button>
   </ion-list>
