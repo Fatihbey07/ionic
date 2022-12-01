@@ -8,7 +8,6 @@ import { KategoriPageRoutingModule } from './kategori-routing.module';
 
 import { KategoriPage } from './kategori.page';
 import { HttpClientModule } from '@angular/common/http';
-import { DenemeComponent } from 'src/app/components/deneme/deneme.component';
 
 @NgModule({
   imports: [
@@ -18,6 +17,6 @@ import { DenemeComponent } from 'src/app/components/deneme/deneme.component';
     KategoriPageRoutingModule,
     HttpClientModule,
   ],
-  declarations: [KategoriPage, DenemeComponent],
+  declarations: [KategoriPage],
 })
 export class KategoriPageModule {}

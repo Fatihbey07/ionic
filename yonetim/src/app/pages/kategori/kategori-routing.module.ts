@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DenemeComponent } from 'src/app/components/deneme/deneme.component';
 
 import { KategoriPage } from './kategori.page';
 

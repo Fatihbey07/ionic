@@ -6,7 +6,11 @@
 
 <ion-content>
   <ion-img src="assets/1.png"></ion-img>
-  <ion-label>Lütfen Kısım Seçiniz.</ion-label>
+  <ion-list>
+    <ion-item *ngIf="servis.OturumKontrol()"
+      ><ion-label>{{servis.aktifUye.adsoyad}}</ion-label>
+    </ion-item>
+  </ion-list>
   <ion-tabs>
     <ion-tab-bar slot="bottom">
       <ion-tab-button (click)="uye()">

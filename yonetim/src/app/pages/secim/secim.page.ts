@@ -1,3 +1,4 @@
+import { DataService } from 'src/app/services/data.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -7,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./secim.page.scss'],
 })
 export class SecimPage implements OnInit {
-  constructor(public router: Router) {}
+  constructor(public router: Router, public servis: DataService) {}
 
   ngOnInit() {}
   uye() {
